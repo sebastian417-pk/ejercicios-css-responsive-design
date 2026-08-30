@@ -1,0 +1,103 @@
+/* ---------- Reset básico ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #222;
+  padding: 40px 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+header p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* ==========================================================
+   Ejercicio 1: Contenedor con Flexbox
+   Las 3 tarjetas se ubican en fila, con espacio entre ellas
+   y centradas horizontalmente.
+   ========================================================== */
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ==========================================================
+   Ejercicio 3: Box model + sombras
+   Cada tarjeta tiene padding, margin, borde y box-shadow
+   para dar sensación de profundidad.
+   ========================================================== */
+.card {
+  flex: 1;
+  padding: 24px;
+  margin: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Colores de fondo distintos para cada tarjeta */
+.card--blue {
+  background-color: #3f6fb4;
+}
+
+.card--green {
+  background-color: #3f9e6b;
+}
+
+.card--orange {
+  background-color: #d97a3f;
+}
+
+/* ==========================================================
+   Ejercicio 2: Media query para móviles
+   En pantallas menores a 768px, las tarjetas se apilan
+   verticalmente y ocupan el 100% del ancho disponible.
+   ========================================================== */
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .card {
+    width: 100%;
+    margin: 8px 0;
+  }
+}
